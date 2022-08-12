@@ -5,14 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Dashboard</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fdfa90401f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
 
-    <h1>Budget Dashboard :P</h1>
-    
+<body>
+    <h1 class="navbar-item notification is-primary" id="dashboard">Budget Dashboard</h1>
+      
+    <section class="box">
+        <div class="field">
+            <label class="label"><i class="fas fa-info-circle"></i> To-Do</label>
+            <div class="control">
+              <input class="input is-small" type="text" placeholder="Text input">
+            </div>
+          </div>
+    </section>
+    <section class="box">
+        <div class="field">
+            <label class="label"><button class="delete"></button> Recent Transactions</label>
+            <div class="control">
+              <input class="input is-small" type="text" placeholder="Text input">
+            </div>
+          </div>
+    </section>
+
+    <div class="box right-side">
+        <article class="media">
+            <div class="media-left"></div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>Today</strong> <small>MM/DD/YYYY</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
+            </div>
+          </article>
+        <hr>
+        <article class="media">
+            <div class="media-left"></div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>Today</strong> <small>MM/DD/YYYY</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
+            </div>
+          </article>
+          <hr>
+          <article class="media">
+              <div class="media-left"></div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>Today</strong> <small>MM/DD/YYYY</small>
+                    <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <hr>
+            <article class="media">
+                <div class="media-left"></div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>Today</strong> <small>MM/DD/YYYY</small>
+                      <br>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                    </p>
+                  </div>
+                </div>
+              </article>
+      </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="/assets/script.js"></script>
