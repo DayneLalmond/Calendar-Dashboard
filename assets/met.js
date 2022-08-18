@@ -28,11 +28,11 @@ function fetchImage (data) {
 function imgDisplay(data) {
     var img = data.primaryImage;
     var artistName = data.artistDisplayName;
-    var rR = data.rightsAndReproduction;
+    var artTitle = data.title;
 
     document.querySelector("#apiImg").src = img;
     document.querySelector(".artistName").innerText = artistName;
-    document.querySelector(".credits").InnerText = rR;
+    document.querySelector(".credits").InnerText = artTitle;
 }
 
 
