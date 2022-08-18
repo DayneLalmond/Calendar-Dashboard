@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Dashboard</title>
-    <script src="https://kit.fontawesome.com/fdfa90401f.js" crossorigin="anonymous"></script>
+    <title>Calendar Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body>
-    <h1 class="navbar-item notification is-primary" id="dashboard">Budget Dashboard</h1>
+
         
+    <h1 class="navbar-item notification is-primary" id="dashboard">Calendar Dashboard</h1>
+
     <section class="box">
         <div class="field">
             <label class="label"><i class="fas fa-info-circle"></i> To-Do</label>
@@ -21,77 +22,27 @@
             </div>
           </div>
     </section>
-    <section class="box">
-        <div class="field">
-            <label class="label"><button class="delete"></button> Recent Transactions</label>
-            <div class="control">
-              <input class="input is-small" type="text" placeholder="Text input">
-            </div>
-          </div>
-    </section>
 
-    <div class="box right-side">
-        <article class="media">
-            <div class="media-left"></div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>Today</strong> <small>MM/DD/YYYY</small>
-                  <br>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                </p>
-              </div>
-            </div>
-          </article>
-        <hr>
-        <article class="media">
-            <div class="media-left"></div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>Today</strong> <small>MM/DD/YYYY</small>
-                  <br>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                </p>
-              </div>
-            </div>
-          </article>
-          <hr>
-          <article class="media">
-              <div class="media-left"></div>
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>Today</strong> <small>MM/DD/YYYY</small>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <hr>
-            <article class="media">
-                <div class="media-left"></div>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>Today</strong> <small>MM/DD/YYYY</small>
-                      <br>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                    </p>
-                  </div>
-                </div>
-              </article>
-      </div>
-
-      <div class="imgDisplay">
-        <img src="" alt="painting here" id="apiImg">
-      </div>
-        <div class="artistName"></div>
-        <div class="credits"></div>
+    <div id="edits"></div>
 
 
-   
+
+
+
+
+
+    
+    
+    
+    
+    <div class="imgDisplay">
+      <img src="" alt="painting here" id="apiImg">
+    </div>
+      <div class="artistName"></div>
+      <div class="credits"></div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="/assets/script.js"></script>

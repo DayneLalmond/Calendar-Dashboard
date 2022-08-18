@@ -9,21 +9,17 @@ html {
     border-bottom: 2px solid black;
 }
 
-section {
-    position: relative;
-    text-align: center;
-    width: 25%;
-    left: 2%;
-    background: transparent;
-}
-
 .right-side {
-    position: absolute;
+    position: relative;
     top: 10%;
     right: 2%;
     margin-left: 30%;
 }
 
-.right-side :hover {
-    background: #F5F5F5;
+/* the to-do section is fixed on the page as you scroll */
+section {
+    position: fixed;
+    text-align: center;
+    width: 25%;
+    left: 2%;
 }
