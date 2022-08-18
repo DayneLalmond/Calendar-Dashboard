@@ -1,38 +1,44 @@
 document.querySelector(".imgDisplay")
 
-var apiUrl =("https://collectionapi.metmuseum.org/public/collection/v1/objects/hasImages=true")
+var apiUrl =("https://collectionapi.metmuseum.org/public/collection/v1")
 
 var metImg
 
 
 
-//var rand = randImg[~~(Math.random() * randImg.length)];
+//var rand = randObj[~~(Math.random() * randObj.length)];
 
-function fetchImage (data) {
-    fetch (apiUrl)
+
+function fetchObjects (data) {
+    fetch (apiUrl +"/search?hasImages=true&isPublicDomain=true&q=paintings")
         .then(res => res.json())
         .then(data => console.log(data))
+}
+
+
+function fetchImage (data) {
+    fetch (apiUrl +"/objects/229569")
+        .then(res => res.json())
+        .then(data => {console.log(data)
         
-
-       // imgDisplay(data);
-
-    
-
-
-    }
+        imgDisplay(data);
+        })
+     }
 
 function imgDisplay(data) {
-    const {primaryImage, artistDisplayName, rightsAndReproduction, } = data;
+    var img = data.primaryImage;
+    var artistName = data.artistDisplayName;
+    var rR = data.rightsAndReproduction;
 
-    document.querySelector(".imgDisplay").src = primaryImage;
-    document.querySelector(".artistName").innerText = artistDisplayName;
-    document.querySelector(".credits").InnerText = rightsAndReproduction;
+    document.querySelector("#apiImg").src = img;
+    document.querySelector(".artistName").innerText = artistName;
+    document.querySelector(".credits").InnerText = rR;
 }
 
 
 
 
-
+//document.addEventListener("DOMContentLoaded",fetchObjects());
 document.addEventListener("DOMContentLoaded",fetchImage());
 
 
