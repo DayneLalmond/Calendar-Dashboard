@@ -1,6 +1,6 @@
 document.querySelector(".imgDisplay")
 
-var apiUrl =("https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Auguste Renoir")
+var apiUrl =("https://collectionapi.metmuseum.org/public/collection/v1/objects/hasImages=true")
 
 var metImg
 
@@ -13,14 +13,21 @@ function fetchImage (data) {
         .then(res => res.json())
         .then(data => console.log(data))
         
-        //imgDisplay(data);
+
+       // imgDisplay(data);
 
     
 
 
     }
 
-//function imgDisplay {  const {img,artist} = }
+function imgDisplay(data) {
+    const {primaryImage, artistDisplayName, rightsAndReproduction, } = data;
+
+    document.querySelector(".imgDisplay").src = primaryImage;
+    document.querySelector(".artistName").innerText = artistDisplayName;
+    document.querySelector(".credits").InnerText = rightsAndReproduction;
+}
 
 
 
