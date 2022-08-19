@@ -32,35 +32,44 @@ getDays();
 
 //============================================================================//
 
-function lastMonth() {
-    const month = dayjs().month()
+document.getElementById("next-month").addEventListener("click", () => {
 
-    console.log(month);
-    for(var i = 1; i >= month; i --) {
-        var div = document.createElement('div');
-        var article = document.createElement('article');
-        div.classList.add('box', 'right-side')
-        article.classList.add('tag', 'is-light')
-        article.textContent = dayjs([month, i --, year]).format('MMM, DD')
-        calendar.append(div);
-        div.append(article);
-    }
-}
-
-
-function nextMonth () {
     const month = dayjs().month() + 2
 
+    console.log(dayjs([month, date, year]).format('MMM/DD/YYYY'))
+
+    var totalDays = dayjs().daysInMonth()
+    console.log(totalDays);
+
     console.log(month);
-    for(var i = 1; i <= month; i + 2) {
+    for(var i = 1; i <= totalDays; i + 2) {
         var div = document.createElement('div');
         var article = document.createElement('article');
-        div.classList.add('box', 'right-side')
-        article.classList.add('tag', 'is-light')
         article.textContent = dayjs([month, i + 2, year]).format('MMM, DD')
         calendar.append(div);
         div.append(article);
-    }
-
-    getDays(month() + 2);
 }
+
+})
+
+
+
+document.getElementById("last-month").addEventListener("click", () => {
+
+    const month = dayjs().month()
+
+    console.log(dayjs([month, date, year]).format('MMM/DD/YYYY'))
+
+    var totalDays = dayjs().daysInMonth()
+    console.log(totalDays);
+
+    console.log(month);
+    for(var i = 1; i >= totalDays; i --) {
+        var div = document.createElement('div');
+        var article = document.createElement('article');
+        article.textContent = dayjs([month, i--, year]).format('MMM, DD')
+        calendar.append(div);
+        div.append(article);
+}
+
+})
