@@ -1,64 +1,66 @@
-(function (window, document) {
+var calendar = $('#edits');
 
-    // we fetch the elements each time because docusaurus removes the previous
-    // element references on page navigation
-    function getElements() {
-        return {
-            layout: document.getElementById('layout'),
-            menu: document.getElementById('menu'),
-            menuLink: document.getElementById('menuLink')
-        };
+var now = dayjs()
+
+// day is day of the week starting with 0 = sunday
+const day = dayjs().day()
+const month = dayjs().month()+1
+const date = dayjs().date()
+const year = dayjs().year()
+
+
+console.log(dayjs([month, date, year]).format('MMM/DD/YYYY'))
+
+function getDays() {
+  //getDays creates elements and applies classes for each number of days in the month
+    var totalDays = dayjs().daysInMonth()
+    console.log(totalDays);
+    for(var i = 1; i <= totalDays; i ++) {
+        var div = document.createElement('div');
+        var article = document.createElement('article');
+        div.classList.add('box', 'right-side')
+        article.classList.add('tag', 'is-light')
+        article.textContent = dayjs([month, i, year]).format('MMM, DD')
+        calendar.append(div);
+        div.append(article);
+    }
+}
+//the function is called here - can be changed if you want!
+getDays();
+
+
+
+//============================================================================//
+
+function lastMonth() {
+    const month = dayjs().month()
+
+    console.log(month);
+    for(var i = 1; i >= month; i --) {
+        var div = document.createElement('div');
+        var article = document.createElement('article');
+        div.classList.add('box', 'right-side')
+        article.classList.add('tag', 'is-light')
+        article.textContent = dayjs([month, i --, year]).format('MMM, DD')
+        calendar.append(div);
+        div.append(article);
+    }
+}
+
+
+function nextMonth () {
+    const month = dayjs().month() + 2
+
+    console.log(month);
+    for(var i = 1; i <= month; i + 2) {
+        var div = document.createElement('div');
+        var article = document.createElement('article');
+        div.classList.add('box', 'right-side')
+        article.classList.add('tag', 'is-light')
+        article.textContent = dayjs([month, i + 2, year]).format('MMM, DD')
+        calendar.append(div);
+        div.append(article);
     }
 
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/);
-        var length = classes.length;
-        var i = 0;
-
-        for (; i < length; i++) {
-            if (classes[i] === className) {
-                classes.splice(i, 1);
-                break;
-            }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
-
-        element.className = classes.join(' ');
-    }
-
-    function toggleAll() {
-        var active = 'active';
-        var elements = getElements();
-
-        toggleClass(elements.layout, active);
-        toggleClass(elements.menu, active);
-        toggleClass(elements.menuLink, active);
-    }
-    
-    function handleEvent(e) {
-        var elements = getElements();
-        
-        if (e.target.id === elements.menuLink.id) {
-            toggleAll();
-            e.preventDefault();
-        } else if (elements.menu.className.indexOf('active') !== -1) {
-            toggleAll();
-        }
-    }
-    
-    document.addEventListener('click', handleEvent);
-
-}(this, this.document));
-
-
-
-//add day js time function
-
-//add day js history function
-
-//add plaid financial tracking function
-
-//add plaid financial history function
+    getDays(month() + 2);
+}
