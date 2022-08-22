@@ -2,8 +2,11 @@ var apiUrl =("https://collectionapi.metmuseum.org/public/collection/v1");
 
 const randomArray = [];
 
+const masterPieceCollectionArray = ["435621","11417","437891","437877","53441","12127","451023","49177","44858"];
+
+
 //Selects a random ObjectID from the array to use for the image.//
-let randomId = [Math.floor(Math.random() * 39273)];
+let randomId = masterPieceCollectionArray[Math.floor(Math.random() * masterPieceCollectionArray.length)];
 
 
 //Fetch the Object IDs of the images.//
