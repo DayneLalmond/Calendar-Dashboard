@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    background: whitesmoke;
 }
 
 #dashboard {
@@ -11,15 +12,18 @@ html {
 
 .right-side {
     position: relative;
-    top: 10%;
     right: 2%;
     margin-left: 30%;
 }
 
 /* the to-do section is fixed on the page as you scroll */
-section {
+.left-section {
     position: fixed;
     text-align: center;
     width: 25%;
     left: 2%;
+}
+
+.custom-highlight {
+    box-shadow: 0 3px 2px 0 #757575, 0 3px 2px 0 #757575;
 }
