@@ -1,40 +1,58 @@
-var apiUrl =("https://collectionapi.metmuseum.org/public/collection/v1")
+var apiUrl =("https://collectionapi.metmuseum.org/public/collection/v1");
 
-var randomArrayItem
+let randomArray = [];
 
 
 //Fetch the Object IDs of the images.//
 
-function fetchObjects (data) {
+async function fetchObjects () {
+ 
+
     fetch (apiUrl +"/search?hasImages=true&isPublicDomain=true&q=paintings")
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .then(data => randomArrayItem => data);
+        .then (res => res.json())
+        .then (data => { randomArray.push(data) });
+        console.log (randomArray)
 
-
-        randomObject(data);
-
-        fetchImage(data);
-}
-
-//Select a Random object from the var array//
-
-function randomObject (data){
-    let randomArrayItemSelection = randomArrayItem[Math.floor(Math.random() * randomArrayItem.length)];
-    console.log (randomArrayItemSelection);
+   
     
+        
+     
 }
+      
+      
+        
+
+
+
+
+
+
+async function selectRandomId() {
+    await fetchObjects();
+        var randomId = Math.floor(Math.random() * randomArray.length)
+
+        console.log(randomId);
+        
+      
+        
+
+       
+
+}    
+
 
 //Fetch Image from the Object ID//
 
-function fetchImage (_data) {
-    fetch (apiUrl +"/objects/448160")
-        .then(res => res.json())
-        .then(data => {console.log(data)
+async function fetchImage (_data) {
+    await selectRandomId();
+        fetch (apiUrl +"/objects/" +randomId)
+    
+            .then(res => res.json())
+            .then(data => {console.log(data)
         
-        imgDisplay(data);
-        })
-     }
+            imgDisplay(data);
+            })
+ }
 
 //Display the selected image and the relevant information//
 
@@ -56,6 +74,6 @@ function imgDisplay(data) {
 }
 
 document.addEventListener("DOMContentLoaded",fetchObjects());
-document.addEventListener("DOMContentLoaded",fetchImage());
+//document.addEventListener("DOMContentLoaded",fetchImage());
 
 
