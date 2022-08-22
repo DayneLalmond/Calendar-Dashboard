@@ -27,3 +27,7 @@ html {
 .custom-highlight {
     box-shadow: 0 3px 2px 0 #757575, 0 3px 2px 0 #757575;
 }
+
+a :hover {
+    box-shadow: 0 3px 2px 0 #757575, 0 3px 2px 0 #757575;
+}

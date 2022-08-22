@@ -1,5 +1,5 @@
 
-var calendar = $('#edits');
+var calendar = $('#calendar');
 
 var now = dayjs()
 
@@ -44,6 +44,7 @@ function showDiv(div, i) {
   if (i === date) {
       div.classList.add('notification', 'is-success', 'label')
       div.classList.add('custom-highlight')
+      // custom css to exaggerate today's date
       }
       if (i < date) {
         div.remove();
@@ -53,6 +54,7 @@ function showDiv(div, i) {
 // the function below is called at the end of the if statements to correct the characteristics within the element
   check(div)
 }
+
 
 function check(div) {
   // if (enabled == true) {
@@ -66,6 +68,17 @@ function check(div) {
   })
 }
 //   else {
-//     console.log('asdasfd')
+//     console.log('asd')
 //   }
+// }
+
+
+// let enabled = false;
+
+// var editMode = document.querySelector("#edit")
+// editMode.addEventListener("click", editor);
+
+// function editor() {
+//   enabled = !enabled;
+//   console.log(enabled)
 // }
